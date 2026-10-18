@@ -1,5 +1,6 @@
 import { Navigate, Outlet, Route, Routes } from 'react-router-dom';
 import Dashboard from './pages/dashboard/dashboard.jsx';
+import LandingPage from './pages/landingPage/landingPage.jsx';
 import Login from './pages/login/login.jsx';
 import Register from './pages/register/register.jsx';
 import useAuthStore from './zustand/authStore.js';
@@ -21,6 +22,11 @@ function App() {
 
   return (
     <Routes>
+      <Route
+        path="/"
+        element={user ? <Navigate to="/dashboard" replace /> : <LandingPage />}
+      />
+
       <Route element={<GuestOnlyRoute />}>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />

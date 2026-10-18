@@ -29,7 +29,7 @@ const Login = () => {
         ];
 
         document.cookie = [
-          `token=${encodeURIComponent(token)}`,
+          `token=${encodeURIComponen  (token)}`,
           ...cookieAttributes,
         ].join('; ');
       }
